@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="server.ServerMainController">
+   <children>
+      <AnchorPane prefHeight="372.0" prefWidth="800.0">
+         <children>
+            <ImageView fitHeight="286.0" fitWidth="800.0" layoutY="195.0" opacity="0.35">
+               <image>
+                  <Image url="/server/icm_logo.png" />
+               </image>
+            </ImageView>
+            <Separator layoutX="316.0" layoutY="191.0" orientation="VERTICAL" prefHeight="168.0" />
+            <Label layoutX="400.0" layoutY="191.0" prefHeight="39.0" prefWidth="250.0" text="SERVER DETAILS:" textFill="#011105">
+               <font>
+                  <Font name="Candara Light" size="33.0" />
+               </font>
+            </Label>
+            <Label layoutX="30.0" layoutY="63.0" prefHeight="39.0" prefWidth="386.0" text="SERVER MAIN WINDOW" textFill="#0d6f17">
+               <font>
+                  <Font name="Candara" size="36.0" />
+               </font>
+            </Label>
+            <Button fx:id="RunServerBtn" layoutX="109.0" layoutY="200.0" mnemonicParsing="false" onMouseClicked="#OpenServer" prefHeight="49.0" prefWidth="103.0" text="Run server">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+            <Button fx:id="StopServerbtn" layoutX="113.0" layoutY="291.0" mnemonicParsing="false" onMouseClicked="#Stopserver" prefHeight="49.0" prefWidth="96.0" text="Stop server">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+            <VBox layoutX="365.0" layoutY="250.0" prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <Label text="Server ip:" />
+                  <TextField fx:id="serverIpTF" editable="false" text="192.168.3.68" />
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Label text="Port:" />
+                        <TextField fx:id="portTF" promptText="Enter port" text="5555" />
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+            <VBox layoutX="536.0" layoutY="250.0" prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <Label text="Status: " />
+                  <TextField fx:id="statusTF" alignment="CENTER" editable="false" prefHeight="20.0" prefWidth="104.0" style="-fx-background-color: #353535; -fx-text-fill: red;" text="OFF" />
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Label text="Num of clients:" />
+                        <TextField fx:id="clientsTF" alignment="CENTER" editable="false" prefHeight="25.0" prefWidth="59.0" text="1" />
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

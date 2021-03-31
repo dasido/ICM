@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane prefHeight="617.0" prefWidth="940.0" style="-fx-border-color: black;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.AssessorHomepageController">
+   <center>
+      <TabPane prefHeight="200.0" prefWidth="201.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+         <tabs>
+          <Tab fx:id="meaningEvaluation" text="Meaning evaluation">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Button fx:id="btnOpenEvaluationReport" layoutX="553.0" layoutY="168.0" mnemonicParsing="false" onAction="#openNewEvaluationReportByAssessor" prefHeight="25.0" prefWidth="187.0" text="Open evaluation report">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                           <effect>
+                              <InnerShadow />
+                           </effect></Button>
+                        <DatePicker fx:id="datePicker" layoutX="307.0" layoutY="29.0" prefHeight="25.0" prefWidth="235.0" promptText="Please enter estimated finish date" style="-fx-border-color: black;" />
+                        <Text fx:id="txtPhaseEstimated" layoutX="98.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phase estimated finish date:" />
+                        <Button fx:id="sendDateForApproval" layoutX="603.0" layoutY="29.0" mnemonicParsing="false" onAction="#sendDateOfEstimatedFinishToInspector" text="Send for approval">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                           <effect>
+                              <InnerShadow />
+                           </effect></Button>
+                        <Separator layoutX="-71.0" layoutY="66.0" prefHeight="0.0" prefWidth="991.0" />
+                        <Text fx:id="txtSituation" layoutX="99.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="629.0">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Text>
+                        <TextArea fx:id="textFieldRequestsInDelay" layoutX="36.0" layoutY="120.0" prefHeight="97.0" prefWidth="357.0" promptText="You have no requets in delay" style="-fx-border-color: black;" />
+                        <Text fill="#905252" layoutX="-12.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" text="*Requests in delay" textAlignment="CENTER" wrappingWidth="264.13671875">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+         </tabs>
+      </TabPane>
+   </center>
+   <top>
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Assessor Homepage" wrappingWidth="235.83905029296875" BorderPane.alignment="CENTER" />
+   </top>
+   <bottom>
+      <AnchorPane prefHeight="344.0" prefWidth="925.0" BorderPane.alignment="CENTER">
+         <children>
+            <Text layoutX="14.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="All the requests to evaluate:" wrappingWidth="329.79563903808594" />
+            <TableView fx:id="assessorTable" layoutX="41.0" layoutY="44.0" prefHeight="257.0" prefWidth="657.0" style="-fx-border-color: black;">
+              <columns>
+                <TableColumn fx:id="requestNumberColumn" prefWidth="252.0" text="Request Number" />
+                  <TableColumn fx:id="informationSystemNameColumn" prefWidth="404.0" text="Information System Name" />
+              </columns>
+            </TableView>
+            <Separator prefHeight="2.0" prefWidth="921.0" />
+            <Button fx:id="btnBack" layoutX="815.0" layoutY="305.0" mnemonicParsing="false" onAction="#backToFieldChoice" text="Back" />
+            <Button fx:id="btnShowDetails" layoutX="721.0" layoutY="89.0" mnemonicParsing="false" onAction="#openChangeRequestForAssessor" prefHeight="25.0" prefWidth="112.0" text="Show details">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+               <effect>
+                  <InnerShadow />
+               </effect></Button>
+            <Button fx:id="btnAskForTimeExtention" layoutX="721.0" layoutY="160.0" mnemonicParsing="false" onAction="#askForTimeExtension" text="Ask for time extension">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+               <effect>
+                  <InnerShadow />
+               </effect></Button>
+            <Button fx:id="btnShowExtraInformation" layoutX="721.0" layoutY="221.0" mnemonicParsing="false" onAction="#ShowExtraInformation" text="Show extra information required">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+               <effect>
+                  <InnerShadow />
+               </effect></Button>
+            <Button fx:id="btnRefreshTable" layoutX="584.0" layoutY="14.0" mnemonicParsing="false" onAction="#refreshTable" text="Refresh table">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+               <effect>
+                  <InnerShadow />
+               </effect></Button>
+         </children>
+      </AnchorPane>
+   </bottom>
+   <effect>
+      <InnerShadow />
+   </effect>
+</BorderPane>

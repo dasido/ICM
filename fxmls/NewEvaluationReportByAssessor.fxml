@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="629.0" prefWidth="854.0" style="-fx-border-color: black;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.NewEvaluationReportByAssessorController">
+   <children>
+      <Text layoutX="351.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Evaluation Report">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Text>
+      <Button fx:id="btnBack" layoutX="325.0" layoutY="565.0" mnemonicParsing="false" onAction="#backToAssessor" style="-fx-border-color: black;" text="Back">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Button>
+      <TextField fx:id="txtChangeLocation" layoutX="197.0" layoutY="81.0">
+         <effect>
+            <InnerShadow />
+         </effect></TextField>
+      <Label layoutX="14.0" layoutY="129.0" text="Change description:">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+         <effect>
+            <Glow />
+         </effect></Label>
+      <Label layoutX="14.0" layoutY="253.0" text="Change advantages:">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+         <effect>
+            <Glow />
+         </effect></Label>
+      <Label layoutX="14.0" layoutY="383.0" text="Change constraints and risks:">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+         <effect>
+            <Glow />
+         </effect></Label>
+      <Label layoutX="14.0" layoutY="526.0" text="Execution duration:">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+         <effect>
+            <Glow />
+         </effect></Label>
+      <TextArea fx:id="txtChangeAdvantages" layoutX="197.0" layoutY="253.0" prefHeight="94.0" prefWidth="602.0">
+         <effect>
+            <InnerShadow />
+         </effect></TextArea>
+      <TextArea fx:id="txtChangeDescription" layoutX="197.0" layoutY="129.0" prefHeight="94.0" prefWidth="602.0">
+         <effect>
+            <InnerShadow />
+         </effect></TextArea>
+      <TextArea fx:id="txtChangeConstraintsAndRisks" layoutX="197.0" layoutY="383.0" prefHeight="94.0" prefWidth="602.0">
+         <effect>
+            <InnerShadow />
+         </effect></TextArea>
+      <Button fx:id="btnSend" layoutX="503.0" layoutY="565.0" mnemonicParsing="false" onAction="#sendEvaluationReport" style="-fx-border-color: black;" text="Send">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Button>
+      <Text fx:id="fillConsAndRisks" fill="RED" layoutX="403.0" layoutY="498.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please fill constrains and risks." wrappingWidth="170.13671875" />
+      <Text fx:id="fillChangeLocation" fill="#ff0606" layoutX="408.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please enter the required change location." wrappingWidth="233.13671875" />
+      <Text fx:id="fillChangeAdvantages" fill="#f50505" layoutX="410.0" layoutY="371.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please enter advantages." wrappingWidth="186.13671875" />
+      <Text fx:id="fillChangeDescription" fill="RED" layoutX="418.0" layoutY="244.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please type a description." wrappingWidth="170.13671875" />
+      <Text fx:id="fillExecutionDuration" fill="#f50000" layoutX="430.0" layoutY="538.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="344.13677978515625" />
+      <Label layoutX="14.0" layoutY="85.0" text="Change location">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+         <effect>
+            <Glow />
+         </effect></Label>
+      <DatePicker fx:id="txtExecutionDuration" layoutX="197.0" layoutY="522.0">
+         <effect>
+            <InnerShadow />
+         </effect></DatePicker>
+   </children>
+   <effect>
+      <InnerShadow />
+   </effect>
+</AnchorPane>

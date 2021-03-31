@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="866.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ReportActivityController">
+   <children>
+      <Button fx:id="btnBack" layoutX="739.0" layoutY="475.0" mnemonicParsing="false" onAction="#backToIT" text="Back" />
+      <Text layoutX="328.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Median" textAlignment="CENTER" underline="true" wrappingWidth="102.68048095703125">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+      </Text>
+      <Text layoutX="531.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Standard deviation" textAlignment="CENTER" underline="true" wrappingWidth="217.08050537109375">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+      </Text>
+      <Text layoutX="386.0" layoutY="254.0" strokeType="OUTSIDE" strokeWidth="0.0" text="frequency distribution" textAlignment="CENTER" underline="true" wrappingWidth="244.28057861328125">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+      </Text>
+      <Text layoutX="269.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Activity Report" textAlignment="CENTER" underline="true" wrappingWidth="313.88055419921875">
+         <font>
+            <Font name="System Bold" size="27.0" />
+         </font>
+      </Text>
+      <TextField fx:id="textFieldMedian" layoutX="288.0" layoutY="121.0" promptText="Median" />
+      <TextField fx:id="textFieldStandardDeviation" layoutX="541.0" layoutY="121.0" promptText="Standard deviation" />
+      <ComboBox fx:id="requestsCBX" layoutX="23.0" layoutY="120.0" onAction="#requestCBXGetter" prefHeight="26.0" prefWidth="211.0" />
+      <Text layoutX="43.0" layoutY="96.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please Choose request status you would like to see:" wrappingWidth="192.0000122070312" />
+      <Text fx:id="textDatePicker1" layoutX="21.0" layoutY="225.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please choose strart date :" wrappingWidth="127.48046875" />
+      <TextField fx:id="textFieldTotalWorkingDays" layoutX="180.0" layoutY="475.0" promptText="Total working days" />
+      <Text fx:id="textTotalWorkingDays" layoutX="43.0" layoutY="492.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total working days :" wrappingWidth="148.79999999999995" />
+      <Text layoutX="379.0" layoutY="181.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total request" textAlignment="CENTER" underline="true" wrappingWidth="244.28057861328125">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+      </Text>
+      <TextField fx:id="textFieldTotalRequest" layoutX="403.0" layoutY="189.0" promptText="Total request" />
+      <DatePicker fx:id="datePicker1" layoutX="21.0" layoutY="249.0" onAction="#firstDateChoose" prefHeight="26.0" prefWidth="136.0" />
+      <Text fx:id="textDatePicker2" layoutX="178.0" layoutY="226.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please choose end date:" wrappingWidth="120.0" />
+      <DatePicker fx:id="datePicker2" layoutX="170.0" layoutY="249.0" onAction="#secondDateChoose" prefHeight="26.0" prefWidth="136.0" />
+      <BarChart fx:id="frequencyBarChart" layoutX="304.0" layoutY="260.0" prefHeight="267.0" prefWidth="408.0">
+        <xAxis>
+          <CategoryAxis prefHeight="38.0" prefWidth="343.0" side="BOTTOM" fx:id="x" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis fx:id="y" side="LEFT" upperBound="20.0" />
+        </yAxis>
+      </BarChart>
+      <Text fx:id="textErrorDate1" fill="#f80000" layoutX="21.0" layoutY="296.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="136.2804565429687">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Text>
+      <Button fx:id="btnGetActivityReport" layoutX="91.0" layoutY="431.0" mnemonicParsing="false" onAction="#getActivityReport" prefHeight="26.0" prefWidth="158.0" text="Get report" />
+      <Text fx:id="textErrorDate2" fill="#f80000" layoutX="155.0" layoutY="297.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="158.39999999999998">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Text>
+      <Text fx:id="textReportStatus" layoutX="61.0" layoutY="354.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="192.0000122070312">
+         <font>
+            <Font name="System Bold" size="29.0" />
+         </font>
+      </Text>
+      <Text fx:id="textFirstDate" layoutX="17.0" layoutY="405.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="RIGHT" wrappingWidth="148.79999999999995">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+      </Text>
+      <Text fx:id="textSecondDate" layoutX="170.0" layoutY="405.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="136.2804565429687">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

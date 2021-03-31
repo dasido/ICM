@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane prefHeight="680.0" prefWidth="736.0" style="-fx-border-color: black;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.MemberOfCommitteeOrChairmanHomepageController">
+   <center>
+      <TabPane fx:id="tpMemberOfCommittee" prefHeight="200.0" prefWidth="201.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+         <tabs>
+            <Tab fx:id="tabMemberOfCommittee" text="Member of committee">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="298.0" prefWidth="645.0">
+                     <children>
+                        <Separator layoutX="-1.0" layoutY="75.0" prefHeight="10.0" prefWidth="921.0" />
+                        <AnchorPane layoutX="-2.0" layoutY="369.0" prefHeight="0.0" prefWidth="922.0" />
+                        <Button fx:id="btnReview2" layoutX="261.0" layoutY="27.0" mnemonicParsing="false" onAction="#viewEvaluationReport" prefHeight="26.0" prefWidth="208.0" style="-fx-border-color: black;" text="Review">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font></Button>
+                        <Button fx:id="btnBack2" layoutX="603.0" layoutY="495.0" mnemonicParsing="false" onAction="#backToFieldChoise" style="-fx-border-color: black;" text="Back">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font></Button>
+                        <Text layoutX="14.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" text="All the requests numbers with pending reports to review:" />
+                        <TableView fx:id="memberOfCommitteeTable" layoutX="14.0" layoutY="110.0" prefHeight="192.0" prefWidth="716.0">
+                           <columns>
+                              <TableColumn fx:id="requestNumberColumn2" prefWidth="286.0" text="Request Number" />
+                              <TableColumn fx:id="informationSystemNameColumn2" prefWidth="429.0" text="Information System Name" />
+                           </columns>
+                        </TableView>
+                        <Text fx:id="textWorkTime2" layoutX="94.0" layoutY="365.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="542.936767578125">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Text>
+                        <Button fx:id="btnRefresh1" layoutX="566.0" layoutY="45.0" mnemonicParsing="false" onAction="#refreshTable" prefHeight="26.0" prefWidth="127.0" style="-fx-border-color: black;" text="Refresh Table">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font></Button>
+                        <TextArea fx:id="textFieldRequestsInDelay2" layoutX="29.0" layoutY="399.0" prefHeight="97.0" prefWidth="357.0" promptText="You have no requets in delay" style="-fx-border-color: black;" />
+                        <Text fill="#905252" layoutX="-14.0" layoutY="391.0" strokeType="OUTSIDE" strokeWidth="0.0" text="*Requests in delay" textAlignment="CENTER" wrappingWidth="264.13671875">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Text>
+                     </children>
+                     <effect>
+                        <InnerShadow />
+                     </effect>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab fx:id="tabChairman" text="Chairman">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="543.0" prefWidth="736.0">
+                     <children>
+                        <Separator layoutX="-8.0" layoutY="117.0" prefHeight="10.0" prefWidth="921.0" />
+                        <AnchorPane layoutY="283.0" prefHeight="201.0" prefWidth="738.0">
+                           <children>
+                              <ComboBox fx:id="comboBoxMembers" layoutX="208.0" layoutY="159.0" prefHeight="25.0" prefWidth="157.0" promptText="Choose a member" style="-fx-border-color: black;" />
+                              <Button fx:id="btnSave" layoutX="457.0" layoutY="159.0" mnemonicParsing="false" onAction="#adHocNominateExaminer" style="-fx-border-color: black;" text="Save">
+                                 <font>
+                                    <Font name="System Bold" size="11.0" />
+                                 </font></Button>
+                              <Separator layoutX="-1.0" layoutY="195.0" prefHeight="3.0" prefWidth="736.0" />
+                              <Text fx:id="textAdhoc" layoutX="130.0" layoutY="144.0" strokeType="OUTSIDE" strokeWidth="0.0" text="To Finish decision create an &quot;Ad-hoc&quot; nomination of Examiner for the examination phase:" />
+                              <Separator layoutX="-4.0" layoutY="120.0" prefHeight="1.0" prefWidth="742.0" />
+                              <Button fx:id="btnAskForMoreInfo" layoutX="525.0" layoutY="68.0" mnemonicParsing="false" onAction="#askForMoreInformation" style="-fx-border-color: black;" text="Ask for more information">
+                                 <font>
+                                    <Font name="System Bold" size="11.0" />
+                                 </font></Button>
+                              <Button fx:id="btnDecline" layoutX="42.0" layoutY="68.0" mnemonicParsing="false" onAction="#declineRequest" prefHeight="0.0" prefWidth="166.0" style="-fx-border-color: black;" text="Decline the request">
+                                 <font>
+                                    <Font name="System Bold" size="11.0" />
+                                 </font></Button>
+                              <Text fx:id="textDecision" layoutX="249.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Decision about the report:">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Text>
+                              <Button fx:id="btnReview1" layoutX="262.0" layoutY="68.0" mnemonicParsing="false" onAction="#viewEvaluationReport" prefHeight="26.0" prefWidth="207.0" style="-fx-border-color: black;" text="Review">
+                                 <font>
+                                    <Font name="System Bold" size="11.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </AnchorPane>
+                        <Button fx:id="btnBack1" layoutX="603.0" layoutY="495.0" mnemonicParsing="false" onAction="#backToFieldChoise" style="-fx-border-color: black;" text="Back">
+                           <font>
+                              <Font name="System Bold" size="11.0" />
+                           </font></Button>
+                        <Button fx:id="btnAskForTimeExtension" layoutX="58.0" layoutY="495.0" mnemonicParsing="false" onAction="#askForTimeExtension" style="-fx-border-color: black;" text="Ask for time extension">
+                           <font>
+                              <Font name="System Bold" size="11.0" />
+                           </font></Button>
+                        <Text layoutX="14.0" layoutY="140.0" strokeType="OUTSIDE" strokeWidth="0.0" text="All the requests numbers with pending reports to review:" />
+                        <TableView fx:id="chairmanTable" layoutX="14.0" layoutY="150.0" prefHeight="158.0" prefWidth="716.0">
+                          <columns>
+                            <TableColumn fx:id="requestNumberColumn" prefWidth="286.0" text="Request Number" />
+                            <TableColumn fx:id="informationSystemNameColumn" prefWidth="429.0" text="Information System Name" />
+                          </columns>
+                        </TableView>
+                        <Text fx:id="textWorkTime" layoutX="87.0" layoutY="546.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="570.936767578125">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Text>
+                        <Text fx:id="textExtension" layoutX="79.0" layoutY="568.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="570.936767578125">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Text>
+                        <Button fx:id="btnRefresh2" layoutX="586.0" layoutY="122.0" mnemonicParsing="false" onAction="#refreshTable" prefHeight="26.0" prefWidth="127.0" style="-fx-border-color: black;" text="Refresh Table">
+                           <font>
+                              <Font name="System Bold" size="11.0" />
+                           </font></Button>
+                        <TextArea fx:id="textFieldRequestsInDelay1" layoutX="14.0" layoutY="32.0" prefHeight="82.0" prefWidth="422.0" promptText="You have no requets in delay" style="-fx-border-color: black;" />
+                        <Text fill="#905252" layoutX="-31.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="*Requests in delay" textAlignment="CENTER" wrappingWidth="264.13671875">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Text>
+                     </children>
+                     <effect>
+                        <InnerShadow />
+                     </effect>
+                  </AnchorPane>
+               </content>
+            </Tab>
+         </tabs>
+      </TabPane>
+   </center>
+   <top>
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Member of Committee homepage " wrappingWidth="200.83905029296875" BorderPane.alignment="CENTER" />
+   </top>
+   <effect>
+      <InnerShadow />
+   </effect>
+</BorderPane>

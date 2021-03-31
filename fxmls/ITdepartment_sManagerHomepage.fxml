@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane prefHeight="720.0" prefWidth="922.0" style="-fx-border-color: black;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ITDepartmentManagerHomepageController">
+   <center>
+      <TabPane fx:id="tpITDepartmentManager" prefHeight="493.0" prefWidth="922.0" style="-fx-border-color: black;" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+        <tabs>
+          <Tab fx:id="tabNominationManagement" text="Nomination Management">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="621.0" prefWidth="922.0">
+                     <children>
+                        <Label layoutX="24.0" layoutY="86.0" text="Add new nomination">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font></Label>
+                        <ComboBox fx:id="chooseRoleCBX" layoutX="24.0" layoutY="111.0" onAction="#getNewNominationRoleFromCBX" prefWidth="150.0" promptText="Choose a role" style="-fx-border-color: black;" />
+                        <ComboBox fx:id="chooseEngineerCBX" layoutX="300.0" layoutY="111.0" onAction="#chooseEngineerCBXClicked" prefWidth="150.0" promptText="Choose engineer" style="-fx-border-color: black;" />
+                        <Button layoutX="600.0" layoutY="111.0" mnemonicParsing="false" onAction="#nominateButtonClicked" style="-fx-border-color: black;" text="Nominate">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font></Button>
+                        <ComboBox fx:id="activeRequestCBX" layoutX="300.0" layoutY="35.0" onAction="#getActiveRequestFromCBX" prefHeight="26.0" prefWidth="178.0" promptText="Choose active request" style="-fx-border-color: black;" />
+                        <Button fx:id="btnViewDetailsOfRequest" layoutX="600.0" layoutY="35.0" mnemonicParsing="false" onAction="#viewButtonClicked" style="-fx-border-color: black;" text="View">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font></Button>
+                        <Separator layoutX="-1.0" layoutY="75.0" prefHeight="10.0" prefWidth="921.0" />
+                        <Separator layoutX="-1.0" layoutY="161.0" prefHeight="14.0" prefWidth="922.0" />
+                        <Label layoutX="24.0" layoutY="175.0" text="Change nomination">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font></Label>
+                        <ComboBox fx:id="chooseEngineerCBX2" layoutX="300.0" layoutY="202.0" onAction="#chooseNewEngineerToSetCBXClicked" prefHeight="25.0" prefWidth="197.0" promptText="Choose new engineer to set" style="-fx-border-color: black;" />
+                        <Button layoutX="600.0" layoutY="202.0" mnemonicParsing="false" onAction="#changeButtonClicked" style="-fx-border-color: black;" text="Change">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font></Button>
+                        <Label layoutX="24.0" layoutY="6.0" prefHeight="18.0" prefWidth="150.0" text="View request nominations">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font></Label>
+                        <ComboBox fx:id="informationSystemCBX" layoutX="24.0" layoutY="35.0" onAction="#getInformationSystemNameFromCBX" prefHeight="26.0" prefWidth="206.0" promptText="Choose information system" style="-fx-border-color: black;" />
+                        <TableView fx:id="itDepartmentManagerTable" layoutX="21.0" layoutY="286.0" prefHeight="261.0" prefWidth="799.0" style="-fx-border-color: black;">
+                          <columns>
+                            <TableColumn fx:id="requestNumberColumn" prefWidth="133.0" text="Request Number" />
+                              <TableColumn fx:id="userIDColumn" prefWidth="117.0" text="User ID" />
+                              <TableColumn fx:id="fullNameColumn" prefWidth="140.0" text="Full Name" />
+                            <TableColumn fx:id="userDepartmentColumn" prefWidth="210.0" text="User Department" />
+                              <TableColumn fx:id="roleColumn" prefWidth="198.0" text="Role" />
+                          </columns>
+                        </TableView>
+                        <Text layoutX="24.0" layoutY="272.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Details of request nominations:">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font></Text>
+                        <Button fx:id="btnBackNomination" layoutX="853.0" layoutY="535.0" mnemonicParsing="false" onAction="#backToFieldChoise" text="Back" />
+                        <Separator layoutX="-1.0" layoutY="245.0" prefHeight="0.0" prefWidth="922.0" />
+                        <Text fx:id="txtInformationSystem" fill="RED" layoutX="24.0" layoutY="73.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="186.0">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font></Text>
+                        <Text fx:id="txtRequestNumber" fill="RED" layoutX="300.0" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="297.13671875">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font></Text>
+                        <Text fx:id="txtView" fill="RED" layoutX="600.0" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="241.0">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font></Text>
+                        <Text fx:id="txtRole" fill="RED" layoutX="24.0" layoutY="150.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="112.0">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font></Text>
+                        <Text fx:id="txtEngineer" fill="RED" layoutX="300.0" layoutY="149.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="137.0">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font></Text>
+                        <Text fx:id="txtEngineer2" fill="RED" layoutX="300.0" layoutY="240.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="215.0">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font></Text>
+                        <Text fx:id="txtRole2" fill="RED" layoutX="14.0" layoutY="239.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="287.13671875">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font></Text>
+                        <Pane fx:id="okPain" layoutX="350.0" layoutY="230.0" prefHeight="127.0" prefWidth="200.0" style="-fx-background-color: white; -fx-border-color: black;" visible="false">
+                           <children>
+                              <Text fx:id="txtSuccessMsg" layoutX="9.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="176.0" />
+                              <Button fx:id="okButton" layoutX="68.0" layoutY="88.0" mnemonicParsing="false" onAction="#okButtonClicked" prefHeight="25.0" prefWidth="64.0" text="Ok">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                                 <effect>
+                                    <InnerShadow />
+                                 </effect></Button>
+                           </children>
+                           <effect>
+                              <InnerShadow />
+                           </effect>
+                        </Pane>
+                        <Text fx:id="txtResponsiblesForMaintenance" layoutX="24.0" layoutY="580.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nomination of responsibles for support and maintenance for each information system:">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font></Text>
+                        <ComboBox fx:id="informationSystemCBX2" layoutX="24.0" layoutY="594.0" onAction="#getInformationSystemNameFromCBX2" prefHeight="26.0" prefWidth="206.0" promptText="Choose information system" style="-fx-border-color: black;" />
+                        <ComboBox fx:id="chooseEngineerCBX3" layoutX="275.0" layoutY="595.0" prefWidth="150.0" promptText="Choose engineer" style="-fx-border-color: black;" />
+                        <Button fx:id="btnSet" layoutX="461.0" layoutY="595.0" mnemonicParsing="false" onAction="#setButtonClicked" style="-fx-border-color: black;" text="Set">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font></Button>
+                        <Text fx:id="txtInformationSystem2" fill="RED" layoutX="24.0" layoutY="633.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="186.0">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font></Text>
+                        <Text fx:id="txtEngineer3" fill="RED" layoutX="275.0" layoutY="632.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="137.0">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font></Text>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab fx:id="tabRequestManagement" text="Request Management">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <HBox layoutX="6.0" layoutY="1.0" prefHeight="273.0" prefWidth="911.0">
+                           <children>
+                              <AnchorPane prefHeight="279.0" prefWidth="0.0">
+                                 <children>
+                                    <Separator layoutY="-3.0" orientation="VERTICAL" prefHeight="281.0" prefWidth="0.0" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane prefHeight="303.0" prefWidth="906.0">
+                                 <children>
+                                    <Button fx:id="btnUnFreezeProcess" layoutX="569.0" layoutY="28.0" mnemonicParsing="false" onAction="#ActiveRequest" style="-fx-border-color: black;" text="Unfreeze process">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font></Button>
+                                    <Label layoutX="154.0" layoutY="31.0" prefHeight="18.0" prefWidth="433.0" text="Choose one process From the frozen table below to unfreeze:">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font></Label>
+                                    <TableView fx:id="itDepartmentManagerTable21" layoutX="52.0" layoutY="73.0" prefHeight="238.0" prefWidth="748.0" style="-fx-border-color: black;">
+                                       <columns>
+                                          <TableColumn fx:id="requestNumberColumn21" prefWidth="103.20001029968262" text="Request Number" />
+                                          <TableColumn fx:id="applicantIDColumn21" prefWidth="112.79998779296875" text="Applicant ID" />
+                                          <TableColumn fx:id="informationSystemNameColumn21" prefWidth="312.00006103515625" text="Information System Name" />
+                                          <TableColumn fx:id="currentPhaseColumn21" prefWidth="249.59991455078125" text="Current Phase" />
+                                       </columns>
+                                    </TableView>
+                                    <Text layoutX="52.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="All frozen processes details:">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font></Text>
+                                    <Button fx:id="btnRefreshManagmentTables" layoutX="711.0" layoutY="28.0" mnemonicParsing="false" onAction="#refreshManagmentTables" prefHeight="26.0" prefWidth="121.0" style="-fx-border-color: black;" text="Refresh tables">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font></Button>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </HBox>
+                        <TableView fx:id="itDepartmentManagerTable2" layoutX="62.0" layoutY="346.0" prefHeight="231.0" prefWidth="754.0" style="-fx-border-color: black;">
+                           <columns>
+                              <TableColumn fx:id="requestNumberColumn2" prefWidth="103.20001029968262" text="Request Number" />
+                              <TableColumn fx:id="applicantIDColumn" prefWidth="117.60006713867188" text="Applicant ID" />
+                              <TableColumn fx:id="informationSystemNameColumn" prefWidth="313.5999450683594" text="Information System Name" />
+                              <TableColumn fx:id="currentPhaseColumn" prefWidth="219.2000732421875" text="Current Phase" />
+                           </columns>
+                        </TableView>
+                        <Button fx:id="btnBackRequest" layoutX="841.0" layoutY="583.0" mnemonicParsing="false" onAction="#backToFieldChoise" text="Back" />
+                        <Separator layoutY="277.0" prefHeight="83.0" prefWidth="922.0" />
+                        <Text layoutX="62.0" layoutY="341.0" strokeType="OUTSIDE" strokeWidth="0.0" text="All active processes details:">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font></Text>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab fx:id="tabPermissionsManagement" text="Permissions Management">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <HBox layoutX="-1.0" layoutY="-2.0" prefHeight="266.0" prefWidth="921.0">
+                           <children>
+                              <AnchorPane prefHeight="287.0" prefWidth="462.0">
+                                 <children>
+                                    <ComboBox fx:id="choosePermissionCBX2" layoutX="141.0" layoutY="99.0" prefHeight="26.0" prefWidth="193.0" promptText="Choose a permission to set" style="-fx-border-color: black;">
+                                       <effect>
+                                          <InnerShadow />
+                                       </effect></ComboBox>
+                                    <Button fx:id="btnAddPermssion" layoutX="188.0" layoutY="169.0" mnemonicParsing="false" onAction="#addUserPermission" style="-fx-border-color: black;" text="Add permission">
+                                       <effect>
+                                          <InnerShadow />
+                                       </effect>
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font></Button>
+                                    <Separator layoutX="456.0" layoutY="2.0" orientation="VERTICAL" prefHeight="287.0" prefWidth="12.0" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane prefHeight="232.0" prefWidth="403.0">
+                                 <children>
+                                    <Button fx:id="btnDeletePermission" layoutX="146.0" layoutY="169.0" mnemonicParsing="false" onAction="#deleteUserPermission" style="-fx-border-color: black;" text="Delete permission">
+                                       <effect>
+                                          <InnerShadow />
+                                       </effect>
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font></Button>
+                                    <ComboBox fx:id="choosePermissionCBX" layoutX="99.0" layoutY="99.0" prefHeight="26.0" prefWidth="206.0" promptText="Choose a permission to delete" style="-fx-border-color: black;">
+                                       <effect>
+                                          <InnerShadow />
+                                       </effect></ComboBox>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </HBox>
+                        <Separator layoutY="285.0" prefHeight="0.0" prefWidth="922.0" />
+                        <TableView fx:id="itDepartmentManagerTable3" layoutX="21.0" layoutY="330.0" prefHeight="228.0" prefWidth="799.0" style="-fx-border-color: black;">
+                           <columns>
+                              <TableColumn fx:id="engineerIDColumn" prefWidth="144.0" text="Engineer ID" />
+                              <TableColumn fx:id="inspectorPermissionColumn" prefWidth="92.0" text="Inspector" />
+                              <TableColumn fx:id="assessorPermissionColumn" prefWidth="95.0" text="Assessor" />
+                              <TableColumn fx:id="chairmanPermissionColumn" prefWidth="98.0" text="Chairman" />
+                              <TableColumn fx:id="memberOfCommitteePermissionColumn" prefWidth="151.0" text="Member Of Committee" />
+                              <TableColumn fx:id="examinerPermissionColumn" prefWidth="111.0" text="Examiner" />
+                              <TableColumn fx:id="executionLeaderPermissionColumn" prefWidth="107.0" text="Execution Leader" />
+                           </columns>
+                        </TableView>
+                        <Button fx:id="btnBackPermissions" layoutX="853.0" layoutY="535.0" mnemonicParsing="false" onAction="#backToFieldChoise" text="Back" />
+                        <Text layoutX="29.0" layoutY="312.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Permissions of all the engineers in the system:" />
+                        <Button fx:id="btnrefreshPermissionsTable" layoutX="707.0" layoutY="294.0" mnemonicParsing="false" onAction="#refreshPermissionsTable" prefHeight="26.0" prefWidth="113.0" style="-fx-border-color: black;" text="Refresh table">
+                           <effect>
+                              <InnerShadow />
+                           </effect>
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font></Button>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+          <Tab fx:id="tabReports" text="Reports">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="211.0" prefWidth="712.0">
+                     <children>
+                        <ComboBox fx:id="chooseReportCBX" layoutX="286.0" layoutY="106.0" prefHeight="26.0" prefWidth="166.0" promptText="Please choose a report" style="-fx-border-color: black;">
+                           <effect>
+                              <InnerShadow />
+                           </effect></ComboBox>
+                        <Button fx:id="getDetailsReport" layoutX="532.0" layoutY="107.0" mnemonicParsing="false" onAction="#openChosenReport" style="-fx-border-color: black;" text="Get details">
+                           <effect>
+                              <InnerShadow />
+                           </effect>
+                           <font>
+                              <Font name="System Bold" size="11.0" />
+                           </font></Button>
+                        <Button fx:id="btnBackReports" layoutX="853.0" layoutY="535.0" mnemonicParsing="false" onAction="#backToFieldChoise" text="Back">
+                           <font>
+                              <Font name="System Bold" size="11.0" />
+                           </font></Button>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab fx:id="tabViewOnlyAccess" text="View only access">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Separator layoutX="5.0" layoutY="285.0" prefHeight="0.0" prefWidth="913.0" />
+                        <Text layoutX="32.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Employees original information:" />
+                        <Text layoutX="29.0" layoutY="314.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Requests original information:" />
+                        <TableView fx:id="itDepartmentManagerTable4" layoutX="29.0" layoutY="45.0" prefHeight="213.0" prefWidth="861.0" style="-fx-border-color: black;">
+                          <columns>
+                            <TableColumn fx:id="userIDColumn2" prefWidth="79.0" text="User ID" />
+                              <TableColumn fx:id="userNameColumn" prefWidth="96.0" text="UserName" />
+                              <TableColumn fx:id="passwordColumn" prefWidth="111.0" text="Password" />
+                              <TableColumn fx:id="fullNameColumn2" prefWidth="115.0" text="Full Name" />
+                              <TableColumn fx:id="emailColumn" prefWidth="159.0" text="Email" />
+                              <TableColumn fx:id="userDepartmentColumn2" prefWidth="154.0" text="User Department" />
+                            <TableColumn fx:id="userRoleColumn" prefWidth="146.0" text="User Role" />
+                          </columns>
+                        </TableView>
+                        <Button fx:id="btnBackViewOnly" layoutX="849.0" layoutY="616.0" mnemonicParsing="false" onAction="#backToFieldChoise" text="Back" />
+                        <TableView fx:id="itDepartmentManagerTable5" layoutX="29.0" layoutY="335.0" prefHeight="184.0" prefWidth="352.0" style="-fx-border-color: black;">
+                           <columns>
+                              <TableColumn fx:id="requestNumberColumn3" prefWidth="108.0" text="Request Number" />
+                              <TableColumn fx:id="applicantIDColumn2" prefWidth="82.0" text="Applicant ID" />
+                              <TableColumn fx:id="informationSystemNameColumn2" prefWidth="163.0" text="Information System Name" />
+                           </columns>
+                        </TableView>
+                        <Button fx:id="btnShowDetails" layoutX="138.0" layoutY="568.0" mnemonicParsing="false" onAction="#showRequestDetails" style="-fx-border-color: black;" text="Show details" />
+                        <Text layoutX="77.0" layoutY="540.0" strokeType="OUTSIDE" strokeWidth="0.0" text="For more details of a request choose one in the table and click &quot;Show Details&quot;:" wrappingWidth="221.517578125">
+                           <font>
+                              <Font name="System Bold" size="11.0" />
+                           </font></Text>
+                        <Button fx:id="btnRefreshViewOnly" layoutX="231.0" layoutY="296.0" mnemonicParsing="false" onAction="#refreshViewOnlyTables" prefHeight="26.0" prefWidth="150.0" style="-fx-border-color: black;" text="Refresh Tables" />
+                        <TextArea fx:id="textFieldRequestsInDelay" layoutX="427.0" layoutY="323.0" prefHeight="127.0" prefWidth="357.0" promptText="There are no requets in delay" style="-fx-border-color: black;" />
+                        <Text fill="#905252" layoutX="374.0" layoutY="317.0" strokeType="OUTSIDE" strokeWidth="0.0" text="*Requests in delay" textAlignment="CENTER" wrappingWidth="264.13671875">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Text>
+                        <TextArea fx:id="textFieldRequestExtension" layoutX="427.0" layoutY="481.0" prefHeight="126.0" prefWidth="357.0" promptText="No request got extension." style="-fx-border-color: black;" />
+                        <Text fill="#905252" layoutX="406.0" layoutY="475.0" strokeType="OUTSIDE" strokeWidth="0.0" text="*Requests in extensions" textAlignment="CENTER" wrappingWidth="264.13671875">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </TabPane>
+   </center>
+   <top>
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="IT Department's Manager Homepage" wrappingWidth="235.83905029296875" BorderPane.alignment="CENTER" />
+   </top>
+   <effect>
+      <InnerShadow />
+   </effect>
+</BorderPane>

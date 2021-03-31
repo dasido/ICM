@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="866.0" style="-fx-border-color: black;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ReportPerformanceController">
+   <children>
+      <Button fx:id="btnBack" layoutX="762.0" layoutY="480.0" mnemonicParsing="false" onAction="#backToIT" style="-fx-border-color: black;" text="Back">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <Text layoutX="237.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Performance" textAlignment="CENTER" underline="true" wrappingWidth="413.08055114746094">
+         <font>
+            <Font name="System Bold" size="27.0" />
+         </font>
+         <effect>
+            <Glow />
+         </effect>
+      </Text>
+      <Text layoutX="30.0" layoutY="105.0" strokeType="OUTSIDE" strokeWidth="0.0" text="The sum of all times made after the assessment(in days):" wrappingWidth="413.08055114746094">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+         <effect>
+            <Glow />
+         </effect>
+      </Text>
+      <TextField fx:id="textFieldAfterAssessment" layoutX="472.0" layoutY="85.0" style="-fx-border-color: black;" />
+      <Text layoutX="243.0" layoutY="225.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Median" textAlignment="CENTER" underline="true" wrappingWidth="102.68048095703125">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+         <effect>
+            <Glow />
+         </effect>
+      </Text>
+      <Text layoutX="446.0" layoutY="225.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Standard deviation" textAlignment="CENTER" underline="true" wrappingWidth="217.08050537109375">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+         <effect>
+            <Glow />
+         </effect>
+      </Text>
+      <TextField fx:id="textFieldMedian" layoutX="203.0" layoutY="235.0" promptText="Median" style="-fx-border-color: black;" />
+      <TextField fx:id="textFieldStandardDeviation" layoutX="456.0" layoutY="235.0" promptText="Standard deviation" style="-fx-border-color: black;" />
+      <Text layoutX="237.0" layoutY="181.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Delays in Execution" textAlignment="CENTER" underline="true" wrappingWidth="413.08055114746094">
+         <font>
+            <Font name="System Bold" size="27.0" />
+         </font>
+         <effect>
+            <Glow />
+         </effect>
+      </Text>
+      <Text layoutX="310.0" layoutY="301.0" strokeType="OUTSIDE" strokeWidth="0.0" text="frequency distribution" textAlignment="CENTER" underline="true" wrappingWidth="244.28057861328125">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+         <effect>
+            <Glow />
+         </effect>
+      </Text>
+      <BarChart fx:id="frequencyBarChart" layoutX="226.0" layoutY="307.0" prefHeight="300.0" prefWidth="414.0">
+         <xAxis>
+            <CategoryAxis prefHeight="38.0" prefWidth="343.0" side="BOTTOM" fx:id="x" />
+         </xAxis>
+         <yAxis>
+            <NumberAxis fx:id="y" side="LEFT" upperBound="20.0" />
+         </yAxis>
+      </BarChart>
+      <ComboBox fx:id="informationSystemCBX" layoutX="42.0" layoutY="312.0" onAction="#getInformationCBXchoice" prefHeight="26.0" prefWidth="161.0" style="-fx-border-color: black;" />
+      <Text layoutX="15.0" layoutY="300.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please Choose information system" wrappingWidth="351.45025634765625">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+         <effect>
+            <Glow />
+         </effect>
+      </Text>
+      <TextField fx:id="textFieldTotalDelaysDays" layoutX="30.0" layoutY="457.0" promptText="Total working days" style="-fx-border-color: black;" />
+      <Text fx:id="textTotalDelaysDays" layoutX="42.0" layoutY="446.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Delays in days:" wrappingWidth="148.79999999999995">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+         <effect>
+            <Glow />
+         </effect>
+      </Text>
+   </children>
+   <effect>
+      <InnerShadow />
+   </effect>
+</AnchorPane>

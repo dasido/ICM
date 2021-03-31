@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="683.0" prefWidth="912.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.OpenChangeRequestController">
+   <children>
+      <Text fx:id="lblChangeRequest" layoutX="327.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="New change request">
+         <font>
+            <Font name="Arial Bold" size="24.0" />
+         </font>
+         <effect>
+            <Glow />
+         </effect>
+      </Text>
+      <Label fx:id="textNameofInformationsystem" layoutX="119.0" layoutY="75.0" text="Name of Information System:">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <effect>
+            <Glow />
+         </effect>
+      </Label>
+      <Label layoutX="122.0" layoutY="168.0" text="Description of existing situation:">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <effect>
+            <Glow />
+         </effect>
+      </Label>
+      <Label layoutX="119.0" layoutY="295.0" text="Description of requested change:">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <effect>
+            <Glow />
+         </effect>
+      </Label>
+      <Label layoutX="122.0" layoutY="415.0" text="Request reason:">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <effect>
+            <Glow />
+         </effect>
+      </Label>
+      <Label layoutX="118.0" layoutY="522.0" text="Comments(optional):">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <effect>
+            <Glow />
+         </effect>
+      </Label>
+      <Button fx:id="btnAddFile" layoutX="119.0" layoutY="633.0" mnemonicParsing="false" onAction="#addFile" style="-fx-border-color: black;" text="Add file">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnCreate" layoutX="413.0" layoutY="633.0" mnemonicParsing="false" onAction="#createNewChangeRequest" style="-fx-border-color: black;" text="Create">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnCancel" layoutX="759.0" layoutY="633.0" mnemonicParsing="false" onAction="#CancelAndReturnToUser" style="-fx-border-color: black;" text="Cancel">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <TextField fx:id="txtInformationSystem" layoutX="123.0" layoutY="101.0" style="-fx-border-color: black;" />
+      <Separator layoutX="-4.0" layoutY="61.0" prefHeight="14.0" prefWidth="920.0" />
+      <TextArea fx:id="textDescriptionExistSituation" layoutX="123.0" layoutY="188.0" prefHeight="103.0" prefWidth="644.0" style="-fx-border-color: black;" />
+      <TextArea fx:id="txtRequestedChange" layoutX="123.0" layoutY="315.0" prefHeight="103.0" prefWidth="644.0" style="-fx-border-color: black;" />
+      <TextArea fx:id="txtRequestReason" layoutX="123.0" layoutY="435.0" prefHeight="88.0" prefWidth="644.0" style="-fx-border-color: black;" />
+      <TextArea fx:id="txtComment" layoutX="122.0" layoutY="543.0" prefHeight="79.0" prefWidth="644.0" style="-fx-border-color: black;" />
+      <Text fx:id="txtErrorReason" fill="RED" layoutX="543.0" layoutY="537.0" text="Please type a reason" wrappingWidth="205.0" />
+      <Text fx:id="selectedFile" layoutX="330.0" layoutY="136.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="535.5367431640625">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+      <Pane fx:id="okPain" layoutX="352.0" layoutY="242.0" prefHeight="200.0" prefWidth="265.0" style="-fx-background-color: white;" visible="false">
+         <children>
+            <Button fx:id="okButton" layoutX="117.0" layoutY="134.0" mnemonicParsing="false" onAction="#okRequestsend" text="Ok" />
+            <Text fx:id="okText" layoutX="6.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="your request was successfully sent." textAlignment="CENTER" wrappingWidth="251.20000000000005" />
+         </children>
+      </Pane>
+      <Button fx:id="btnOK" layoutX="691.0" layoutY="636.0" mnemonicParsing="false" onAction="#backToAssessor" prefHeight="21.0" prefWidth="38.0" style="-fx-border-color: black;" text="OK">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <Text fx:id="txtWantedChange" fill="RED" layoutX="543.0" layoutY="430.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please describe the wanted change" />
+      <Text fx:id="txtExsistSituation" fill="RED" layoutX="543.0" layoutY="310.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please type the existing situation" />
+      <Text fx:id="errInfor" fill="RED" layoutX="543.0" layoutY="160.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please type the information system name" />
+      <ComboBox fx:id="informationCBX" layoutX="124.0" layoutY="134.0" prefHeight="26.0" prefWidth="205.0" visible="false" />
+      <Label fx:id="textInformationCBX" layoutX="126.0" layoutY="113.0" text="Choose information system" visible="false">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <effect>
+            <Glow />
+         </effect>
+      </Label>
+      <Button fx:id="saveFile" disable="true" layoutX="587.0" layoutY="100.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="173.0" text="Open additional file" visible="false" />
+   </children>
+   <effect>
+      <InnerShadow />
+   </effect>
+     </AnchorPane>
